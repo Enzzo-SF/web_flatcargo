@@ -2,8 +2,22 @@ version: '3.8'
 
 services:
   web_flatcargo:
-    build: .
+    image: ${DOCKER_REGISTRY-}web_flatcargo:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NODE_ENV=production
     container_name: web_flatcargo
     ports:
-      - "9460:80"
+      - "${PORT:-9460}:80"
     restart: unless-stopped
+    networks:
+      - web_network
+    environment:
+      - NODE_ENV=production
+
+networks:
+  web_network:
+    driver: bridge
+    name: web_network
