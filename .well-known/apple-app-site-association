@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "WY66J2BAX5.app.flatcargo.com",
+        "paths": [
+          "*",
+          "/??",
+          "/product-details"
+        ]
+      }
+    ]
+  }
+}

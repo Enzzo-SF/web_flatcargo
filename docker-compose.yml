@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  web_flatcargo:
+    build: .
+    container_name: web_flatcargo
+    ports:
+      - "9460:80"
+    restart: unless-stopped

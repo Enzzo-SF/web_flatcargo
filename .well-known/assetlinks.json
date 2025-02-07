@@ -1,0 +1,26 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "app.flatcargo.com",
+            "sha256_cert_fingerprints": [
+                "78:76:7F:A9:32:18:79:D0:AB:95:41:F3:6C:67:11:B4:DE:94:A5:A9:6E:D2:6F:36:40:83:C1:D7:25:81:42:9D"
+            ]
+        }
+    },
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "app.flatcargo.com",
+            "sha256_cert_fingerprints": [
+                "57:85:1E:20:8F:D0:CE:62:01:21:68:E6:E8:92:E3:18:FB:E4:16:19:E7:F7:45:85:37:F2:6E:E9:F0:78:A1:A2"
+            ]
+        }
+    }
+]
