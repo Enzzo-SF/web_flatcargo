@@ -2,22 +2,19 @@ version: '3.8'
 
 services:
   web_flatcargo:
-    image: ${DOCKER_REGISTRY-}web_flatcargo:latest
+    image: web_flatcargo
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        - NODE_ENV=production
-    container_name: web_flatcargo
     ports:
-      - "${PORT:-9460}:80"
-    restart: unless-stopped
+      - "9460:80"
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
     networks:
-      - web_network
-    environment:
-      - NODE_ENV=production
+      - overlay_network
 
 networks:
-  web_network:
-    driver: bridge
-    name: web_network
+  overlay_network:
+    driver: overlay
+    attachable: true
