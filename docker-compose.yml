@@ -2,8 +2,23 @@ version: '3.8'
 
 services:
   web_flatcargo:
-    build: .
+    build:
+      context: https://github.com/Enzzo-SF/web_flatcargo#main
+      dockerfile: Dockerfile
     container_name: web_flatcargo
     ports:
       - "9460:80"
     restart: unless-stopped
+    networks:
+      - web_network
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  web_network:
+    driver: bridge
